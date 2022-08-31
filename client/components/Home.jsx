@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchJobs} from '../actions'
+import FilterJobs from './FilterJobs'
 
 function Home () {
   const jobs = useSelector(state => state.jobs)
@@ -20,6 +21,7 @@ function Home () {
 
   return (
     <div className='container-job-listings'>
+      < FilterJobs />
       {filteredStatus.map((job) => { // needs to be filtered based on the selected job status
         return (
           <div className='job-listing' key={job.id}>
