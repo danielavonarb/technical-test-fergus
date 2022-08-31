@@ -2,14 +2,29 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 
-
+import { setStatusSelected } from '../actions'
 
 function FilterJobs () {
   const jobs = useSelector(state => state.jobs)
 
-  const statusArr = jobs.map((job) => {
-    return job.status
-  })
+
+  const tasteNotes = useSelector(state => state.tastenotes.tasteNotesArray)
+
+  const coffees = useSelector(state => state.coffees)
+  const dispatch = useDispatch()
+
+
+
+
+
+
+  function handleSelectOnChange(e){
+
+    dispatch(setTasteNotesSelected(e.target.value))  
+
+  }
+
+  
   
 
   
