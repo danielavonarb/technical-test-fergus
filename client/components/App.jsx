@@ -1,15 +1,16 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 
+import Home from './Home'
 
 function App () {
-
-
+ 
   return (
     <>
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-      </div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+      </Routes>
+
     </>
   )
 }
