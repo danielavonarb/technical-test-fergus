@@ -20,7 +20,7 @@ function Home () {
 
   return (
     <div className='container-job-listings'>
-      {filteredStatus.map((job) => { // needs to be filtered based on the status
+      {filteredStatus.map((job) => { // needs to be filtered based on the selected job status
         return (
           <div className='job-listing' key={job.id}>
             <h3 className='job-listing-title'>{job.description}</h3>

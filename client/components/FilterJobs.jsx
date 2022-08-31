@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setStatusSelected } from '../actions'
 
 function FilterJobs () {
-  const jobs = useSelector(state => state.jobs)
   const statusArr = useSelector(state => state.status.statusArray)
 
   const dispatch = useDispatch()
