@@ -1,19 +1,3 @@
-import { getFruits } from '../apis/fruits'
+import {} from '../apis/jobs'
 
 export const SET_FRUITS = 'SET_FRUITS'
-
-export function setFruits(fruits) {
-  return {
-    type: SET_FRUITS,
-    payload: fruits,
-  }
-}
-
-export function fetchFruits() {
-  return (dispatch) => {
-    return getFruits().then((fruits) => {
-      dispatch(setFruits(fruits))
-      return null
-    })
-  }
-}
