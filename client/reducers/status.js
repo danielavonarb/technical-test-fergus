@@ -1,6 +1,6 @@
 import { SET_STATUS, SET_STATUS_SELECTED } from '../actions'
 
-const initialState = { statusArray: [], StatusSelected: 'All' }
+const initialState = { statusArray: [], statusSelected: 'All' }
 
 const reducer = (state = initialState, action) => {
   const { type, payload } = action
