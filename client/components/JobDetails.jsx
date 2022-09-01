@@ -3,15 +3,12 @@ import { useSelector } from 'react-redux'
 import { useParams, Link } from 'react-router-dom'
 
 
-
 function JobDetails () {
   const jobs = useSelector(state => state.jobs)
   
   const {id} = useParams()
   const job = jobs.find((job) => id == job.id)
   
-
-
   return (
     <div className='job-details-container'>
       <div className='job-details'>
