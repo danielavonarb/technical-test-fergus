@@ -15,7 +15,7 @@ function Home () {
   }, [])
 
   const filteredStatus = jobs.filter((job) => {
-    return (statusSelected == 'All' || job.status === statusSelected)
+    return (statusSelected === 'All' || job.status === statusSelected)
   })
 
 
