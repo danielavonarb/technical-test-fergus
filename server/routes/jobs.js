@@ -29,4 +29,18 @@ router.get('/:id', (req, res) => {
     })
 })
 
+router.patch('/:id', (req, res) => {
+  const updatedComment = req.body
+  const id = req.params.id
+  db.updateComment(id, updatedComment)
+    .then(() => {
+      return db.getJob(id)
+    })
+    .then((job) => res.json(job))
+    .catch((err) => {
+      console.error(err)
+      res.status(500).send('something went wrong')
+    })
+})
+
 module.exports = router
