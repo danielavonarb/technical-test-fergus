@@ -7,3 +7,7 @@ export function getJobs() {
     return res.body
   })
 }
+
+export function patchComment(updatedJob) {
+  return request.patch(`${rootUrl}/jobs/${updatedJob.id}`).send(updatedJob)
+}
