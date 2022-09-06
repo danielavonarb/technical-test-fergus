@@ -33,8 +33,6 @@ router.get('/:id', (req, res) => {
 router.patch('/:id', (req, res) => {
   const updatedComment = req.body
   const id = req.params.id
-  console.log('updateComment fron route:', updatedComment)
-  console.log('id from route:', id)
   db.updateComment(id, updatedComment)
     .then(() => {
       return db.getJob(id)

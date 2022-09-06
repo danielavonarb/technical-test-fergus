@@ -27,7 +27,6 @@ export function setStatusSelected(statusSelected) {
 }
 
 export function updateComment(updatedComment) {
-  console.log('updatedComment from simpleaction:', updatedComment)
   return {
     type: UPDATE_COMMENT,
     payload: updatedComment,
@@ -48,7 +47,6 @@ export function fetchJobs() {
 }
 
 export function editComment(updatedComment) {
-  console.log('updatedComment from actions thunk:', updatedComment)
   return (dispatch) => {
     return patchComment(updatedComment)
       .then(() => {

@@ -10,13 +10,8 @@ const reducer = (state = initialState, action) => {
     case UPDATE_COMMENT:
       return state.map((updatedComment) => {
         if (updatedComment.id === payload.id) {
-          // console.log('updatedComment from reducer:', updatedComment)
-          console.log('id from reducers:', updatedComment.id)
-          console.log('payload from reducers:', payload)
           return { ...updatedComment, ...payload }
         }
-        console.log(updatedComment)
-        // console.log(payload)
         return updatedComment
       })
     default:
