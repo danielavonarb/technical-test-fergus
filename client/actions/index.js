@@ -26,10 +26,11 @@ export function setStatusSelected(statusSelected) {
   }
 }
 
-export function updateComment(updatedJob) {
+export function updateComment(updatedComment) {
+  console.log('updatedComment from simpleaction:', updatedComment)
   return {
     type: UPDATE_COMMENT,
-    payload: updatedJob,
+    payload: updatedComment,
   }
 }
 
@@ -46,11 +47,12 @@ export function fetchJobs() {
   }
 }
 
-export function editComment(updatedJob) {
+export function editComment(updatedComment) {
+  console.log('updatedComment from actions thunk:', updatedComment)
   return (dispatch) => {
-    return patchComment(updatedJob)
+    return patchComment(updatedComment)
       .then(() => {
-        dispatch(updateComment(updatedJob))
+        dispatch(updateComment(updatedComment))
         return null
       })
       .catch((err) => {

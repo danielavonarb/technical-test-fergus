@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 
-import { saveJob} from '../actions'
+import { editComment} from '../actions'
 
 
 function UpdateJob () {
@@ -13,7 +13,8 @@ function UpdateJob () {
   const {id} = useParams()
   const job = jobs.find((job) => id == job.id)
 
-  const [updatedJob, setUpdatedJob] = useState(job.comment)
+  const [updatedJob, setUpdatedJob] = useState(job)
+  console.log('updatedJob from Component useState:', updatedJob)
 
 
   function handleChange (event){
@@ -25,10 +26,18 @@ function UpdateJob () {
     setUpdatedJob(newJob)
   }
 
+  // function handleChange(evt){
+  //   setUpdatedJob({
+  //     ...updatedJob,
+  //     [evt.target.name]: evt.target.value,
+  //   })
+  // }
+
   function handleSubmit(event){
     event.preventDefault()
-    dispatch(saveJob(updatedJob))
+    dispatch(editComment(updatedJob))
   }
+
   
   function handleClick() {
     navigate(-1)
@@ -39,11 +48,10 @@ function UpdateJob () {
   return (
    
     <form onSubmit={handleSubmit}>
-      <label htmlFor="comment">Edit Comment
-      <input id="comment" name="comment" value={updatedJob.comment} onChange={handleChange}/> </label>
+      <label htmlFor="comment">Edit Comment</label>
+      <input id="comment" name="comment" value={updatedJob.comment} onChange={handleChange}/>
       <button onClick={handleClick}>Update</button>
-    </form>
-    
+    </form>    
   )
 }
 
