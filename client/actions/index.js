@@ -1,5 +1,7 @@
 import { getJobs, patchComment } from '../apis/jobs'
 
+//Actions are JavaScript objects that describe something that has happened in the application
+
 export const SET_JOBS = 'SET_JOBS'
 export const SET_STATUS = 'SET_STATUS'
 export const SET_STATUS_SELECTED = 'SET_STATUS_SELECTED'
