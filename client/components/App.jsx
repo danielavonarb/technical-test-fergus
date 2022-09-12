@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 
 import Home from './Home'
 import JobDetails from './JobDetails'
+import UpdateNotes from './UpdateNotes'
 
 function App () {
  
@@ -11,6 +12,7 @@ function App () {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/:id' element={<JobDetails/>} />
+        <Route path='/:id/edit' element={<UpdateNotes />} />
       </Routes>
     </>
   )

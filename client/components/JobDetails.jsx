@@ -18,6 +18,10 @@ function JobDetails () {
         <p>Status:{job.status}</p>
         <p>Comment:{job.comment}</p>
       </div>
+
+      <Link to={`/${job.id}/edit`}>
+        <button className='button'>Update notes</button>
+      </Link>
       <Link to={'/'}>
         <button className='button'>Home</button>
       </Link>
