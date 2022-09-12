@@ -1,3 +1,5 @@
+//Actions are JavaScript objects that describe something that has happened in the application
+
 import { getJobs } from '../apis/jobs'
 
 export const SET_JOBS = 'SET_JOBS'
