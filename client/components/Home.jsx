@@ -6,16 +6,16 @@ import { fetchJobs} from '../actions'
 import FilterJobs from './FilterJobs'
 
 function Home () {
-  const jobs = useSelector(state => state.jobs)
+  const jobs = useSelector(state => state.jobs) //hook to access redux store's state
   const statusSelected = useSelector(state => state.status.statusSelected)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(fetchJobs())
+    dispatch(fetchJobs()) // The action object is sent to the store using the store's dispatch() method to let the store know something has happened.
   }, [])
 
   const filteredStatus = jobs.filter((job) => {
-    return (statusSelected == 'All' || job.status === statusSelected)
+    return (statusSelected === 'All' || job.status === statusSelected)
   })
 
 

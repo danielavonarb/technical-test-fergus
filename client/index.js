@@ -6,6 +6,9 @@ import store from './store'
 
 import App from './components/App'
 
+// Making the store available
+// The react-redux package provides the Provider component that makes the store available to all containers regardless of their location in the hierarchy.
+
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
